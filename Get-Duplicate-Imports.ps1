@@ -269,7 +269,7 @@ foreach($indicator in $indicator_list)
         Write-host "checking " + $indicator
         
         ## call VT API, check if in Defender and get possible file collisions
-        if ($IndicatorType -eq "FileSha256" -or $IndicatorType -eq "FileSha1")
+        if (($IndicatorType -eq "FileSha256" -or $IndicatorType -eq "FileSha1") -and $VTKey)
         {
             $fileCollisions = Check-VT -indicator $indicator
         }
