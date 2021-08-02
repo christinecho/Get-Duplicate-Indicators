@@ -1,5 +1,5 @@
 # Get-Duplicate-Indicators
-
+Sign up for a Virus Total API key: https://support.virustotal.com/hc/en-us/articles/115002088769-Please-give-me-an-API-key#:~:text=You%20do%20not%20need%20to%20ask%20for%20a,this%20page%20you%20can%20find%20your%20apikey%20string%3A 
 ## Get-Duplicate-Imports
 This script takes in a csv file of indicators and identifies duplicates before importing.
 Defender for Endpoint allows users to create duplicate indicators which may pose a problem
