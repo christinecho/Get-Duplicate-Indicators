@@ -191,11 +191,10 @@ function Get-DuplicateMDE
                         }
                     }
                     else {
-                        if ($existingIndicator.rbacGroupNames.count -eq 0)
-                        {
-                            Write-host "---already in the MDE indicators please check securitycenter for possible conflicts"
-                            return
-                        }
+                        
+                        Write-host "---already in the MDE indicators please check securitycenter for possible conflicts"
+                        return
+                        
                     }
                 }
                 ## check other file hashes
@@ -218,11 +217,10 @@ function Get-DuplicateMDE
                             }
                             else 
                             {
-                                if ($existingIndicator.rbacGroupNames.count -eq 0)
-                                {
-                                    Write-host "---file collision with " $filecollision " already in the MDE indicators please check securitycenter for possible conflicts"
-                                    return
-                                }    
+                                
+                                Write-host "---file collision with " $filecollision " already in the MDE indicators please check securitycenter for possible conflicts"
+                                return
+                                 
                             }
                         }
                     }
@@ -231,7 +229,7 @@ function Get-DuplicateMDE
     }
     
     ## not in MDE, so import
-    if ($response_count -eq 0 -and $Import) 
+    if ($Import) 
     {
 
         Write-host "--Is not in MDE indicators"
@@ -252,10 +250,6 @@ function Get-DuplicateMDE
 
         $return = Invoke-RestMethod -Headers $headers -Uri $indicatorurl -Body ($postParams|ConvertTo-Json)  -Method Post -ContentType 'application/json'
         $return
-    }
-    Else
-    {
-        Write-host "---already in the MDE indicators please check securitycenter for possible conflicts"
     }
 }
 
