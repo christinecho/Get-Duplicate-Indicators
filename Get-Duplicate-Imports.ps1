@@ -246,7 +246,6 @@ function Get-DuplicateMDE
             "description"= $Description;
             "recommendedActions"= $RecommendedActions;
             "expirationTime" = ($datetimeOffsetTest | get-date -Format "yyyy-MM-ddTHH:mm:ssZ");
-            "rbacGroupNames" = @($RbacGroup)
         }
 
 
